@@ -1,0 +1,841 @@
+
+/* ===== CONFIGURACIÓN GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f2e9;
+    color: #203c32;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+.navbar {
+    min-height: 70px;
+    padding: 10px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f8f6ef;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.05;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: var(--navy);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 950;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.menu a {
+    font-size: 11px;
+    color: #292e29;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #b58c48;
+}
+
+.btn-reserva {
+    background-color: #183d32;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.btn-reserva:hover,
+.btn-verde:hover {
+    background-color: #37614d;
+}
+
+/* ===== PORTADA PRINCIPAL ===== */
+
+/* PORTADA CON FOTOGRAFÍA DE FONDO */
+.hero {
+  position: relative;
+  min-height: 560px;
+  height: min(680px, 78vh);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 60px clamp(30px, 7vw, 100px);
+  overflow: hidden;
+  color: #fff;
+
+  /* Cambia este archivo por la fotografía panorámica que tengas */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 28, 18, 0.78) 0%,
+      rgba(9, 28, 18, 0.48) 48%,
+      rgba(9, 28, 18, 0.12) 100%
+    ),
+    url("img/FOTO\ PRINCIPAL\ INICIO.png") center / cover no-repeat;
+}
+
+/* Texto principal, a la izquierda */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 58%);
+}
+
+.hero .etiqueta {
+  color: #e2c68c;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(3.3rem, 6.5vw, 6rem);
+  line-height: 0.88;
+  font-weight: bold;
+  margin-bottom: 18px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  margin-bottom: 18px;
+}
+
+.hero-description {
+  max-width: 440px;
+  color: #f4f0e5;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 25px;
+}
+
+/* Botón de la portada */
+.hero .btn-dorado {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 22px;
+  border-radius: 30px;
+  background: #c9a45e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero .btn-dorado:hover {
+  background: #b48d49;
+  transform: translateY(-2px);
+}
+
+/* Frase decorativa a la derecha */
+.hero-frase {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  margin: 0 0 25px auto;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.3vw, 2rem);
+  line-height: 1.35;
+  text-align: right;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* Ajuste para tabletas y celulares */
+@media (max-width: 700px) {
+  .hero {
+    height: auto;
+    min-height: 650px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 55px 25px 35px;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 13vw, 5rem);
+  }
+
+  .hero-frase {
+    align-self: flex-end;
+    margin-top: 35px;
+    margin-bottom: 0;
+  }
+}
+
+
+.etiqueta {
+    color: #d4b579;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 6.5vw, 82px);
+    font-weight: normal;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    margin-bottom: 16px;
+}
+
+.hero-subtitle {
+    font-size: clamp(14px, 1.5vw, 19px);
+    margin-bottom: 12px;
+}
+
+.hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 390px;
+    margin-bottom: 18px;
+}
+
+.btn-dorado {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 22px;
+    border-radius: 30px;
+    background-color: #c4a064;
+    color: white;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.btn-dorado:hover {
+    background-color: #a9854b;
+}
+
+.hero-frase {
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+    color: #f4e4bf;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 27px);
+    line-height: 1.1;
+    text-align: right;
+    transform: rotate(-5deg);
+}
+
+/* ===== SECCIÓN DE CAMPAÑA ===== */
+.campana {
+    display: grid;
+    grid-template-columns: 1.05fr 1.55fr 0.95fr;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 5%;
+    background-color: #f8f6ef;
+}
+
+.campana-imagen {
+    height: 150px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.campana-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.campana-texto {
+    padding: 0 25px;
+    border-left: 2px solid #8a9b8d;
+}
+
+.campana-texto h2 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.campana-texto p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #58635b;
+    margin-bottom: 13px;
+}
+
+.btn-verde {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background-color: #214b3b;
+    color: white;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.beneficios {
+    border-left: 2px solid #8a9b8d;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.beneficio-icon {
+    color: #315744;
+    font-size: 21px;
+    width: 25px;
+    text-align: center;
+}
+
+/* ===== COMUNIDADES ===== */
+.comunidades {
+    background-color: #17483a;
+    color: #f8f6ef;
+    padding: 24px 5%;
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración vegetal */
+.comunidades::before {
+    content: "❧";
+    position: absolute;
+    left: -15px;
+    bottom: -35px;
+    font-size: 150px;
+    color: rgba(223, 225, 196, 0.10);
+    transform: rotate(35deg);
+    pointer-events: none;
+}
+
+.comunidades-intro {
+    position: relative;
+    z-index: 1;
+}
+
+.comunidades-intro h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.comunidades-intro p {
+    font-size: 13px;
+    margin-bottom: 18px;
+    color: #d9e0d5;
+}
+
+.btn-contorno {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #c5b58d;
+    border-radius: 30px;
+    padding: 11px 17px;
+    color: #f5ead2;
+    font-size: 11px;
+    transition: background 0.3s;
+}
+
+.btn-contorno:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.comunidades-lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.comunidad-card {
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    border: 1px solid rgba(235, 225, 193, 0.35);
+    border-radius: 10px;
+    background-color: #244c3e;
+}
+
+.comunidad-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.comunidad-card:hover img {
+    transform: scale(1.06);
+}
+
+.comunidad-card::after {
+    content: "";
+    position: absolute;
+    inset: 40% 0 0;
+    background: linear-gradient(
+        transparent,
+        rgba(8, 20, 13, 0.85)
+    );
+    pointer-events: none;
+}
+
+.card-info {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 1;
+}
+
+.card-info h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 10px;
+    color: #e0e3d7;
+}
+
+.card-flecha {
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #d5bd86;
+    color: #234635;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.card-flecha:hover {
+    background-color: white;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: #102e25;
+    color: #e6e4d9;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ===== ADAPTACIÓN A TABLETS ===== */
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .campana {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .beneficios {
+        grid-column: 1 / -1;
+        border-left: none;
+        border-top: 1px solid #aab5a8;
+        padding: 18px 0 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .comunidades {
+        grid-template-columns: 1fr;
+    }
+
+    .comunidades-lista {
+        gap: 12px;
+    }
+}
+
+/* ===== ADAPTACIÓN A CELULARES ===== */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 5%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .btn-reserva {
+        padding: 10px 15px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 480px;
+        max-height: none;
+        min-height: 0;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 13vw, 72px);
+    }
+
+    .hero-description {
+        max-width: 300px;
+    }
+
+    .hero-frase {
+        right: 6%;
+        bottom: 5%;
+        font-size: 19px;
+    }
+
+    .campana {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 25px 6%;
+    }
+
+    .campana-imagen {
+        height: 210px;
+    }
+
+    .campana-texto {
+        padding: 0 0 0 15px;
+    }
+
+    .beneficios {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .beneficio {
+        font-size: 11px;
+    }
+
+    .comunidades {
+        padding: 28px 6%;
+    }
+
+    .comunidades-lista {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .comunidad-card {
+        height: 190px;
+    }
+
+    .comunidades-intro h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* ===== EXPERIENCIAS ===== */
+.experiencias {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1.5fr;
+    align-items: center;
+    gap: 25px;
+    padding: 22px 5%;
+    background-color: #f8f6ef;
+}
+
+.experiencias-imagen {
+    height: 125px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.experiencias-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experiencias-contenido h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.experiencias-contenido p {
+    font-size: 12px;
+    color: #515d53;
+    margin-bottom: 15px;
+}
+
+.experiencias-contenido .btn-verde {
+    white-space: nowrap;
+}
+
+.experiencias-categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+.experiencia-categoria {
+    min-height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    text-align: center;
+    padding: 5px;
+    border-left: 1px solid #c8c9bd;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #284537;
+    transition: color 0.3s;
+}
+
+.experiencia-categoria:hover {
+    color: #b28a4c;
+}
+
+.categoria-icono {
+    font-size: 23px;
+    line-height: 1;
+}
+
+/* ===== GALERÍA ===== */
+.galeria {
+    min-height: 225px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    align-items: center;
+    gap: 30px;
+    padding: 25px 7%;
+    background-color: #f3efe5;
+    overflow: hidden;
+}
+
+.galeria-texto h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.05;
+    margin-bottom: 12px;
+}
+
+.galeria-texto p {
+    font-size: 12px;
+    color: #536056;
+    margin-bottom: 15px;
+}
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 105px 105px;
+    gap: 10px;
+    transform: rotate(-2deg);
+}
+
+.galeria-fotos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 3px 9px rgba(40, 45, 30, 0.15);
+}
+
+.foto-atardecer {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.foto-gastronomia {
+    grid-column: 2;
+    grid-row: 1;
+    transform: rotate(3deg);
+}
+
+.foto-paisaje {
+    grid-column: 2;
+    grid-row: 2;
+    transform: rotate(2deg);
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 1000px) {
+    .experiencias {
+        grid-template-columns: 1fr 1.3fr;
+    }
+
+    .experiencias-categorias {
+        grid-column: 1 / -1;
+        border-top: 1px solid #c8c9bd;
+        padding-top: 12px;
+    }
+
+    .galeria {
+        padding: 25px 5%;
+    }
+}
+
+/* ===== RESPONSIVE: CELULAR ===== */
+@media (max-width: 600px) {
+    .experiencias {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 25px 6%;
+    }
+
+    .experiencias-imagen {
+        height: 190px;
+    }
+
+    .experiencias-categorias {
+        grid-column: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .experiencia-categoria {
+        border: 1px solid #d5d5c9;
+        border-radius: 8px;
+        min-height: 90px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 6%;
+    }
+
+    .galeria-fotos {
+        grid-template-rows: 130px 130px;
+        gap: 8px;
+        transform: none;
+    }
+}
+
+/* ===== ENCABEZADO COMPACTO EN CELULARES ===== */
+@media (max-width: 600px) {
+    .navbar {
+        min-height: 70px;
+        padding: 10px 18px;
+        justify-content: flex-start;
+    }
+
+    /* Ocultar los enlaces de navegación */
+    .navbar .menu {
+        display: none;
+    }
+
+    /* Ocultar el botón de reserva */
+    .navbar .btn-reserva {
+        display: none;
+    }
+
+    /* Mantener visible el logo y el nombre */
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .navbar .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+}

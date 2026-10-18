@@ -1,0 +1,486 @@
+
+/* ===== ESTILOS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #233e32;
+    background: #f1f1ed;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.navbar {
+    min-height: 76px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: white;
+    background-color: #234b35;
+    border-bottom: 1px solid #d8d8c9;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.05;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: #183d32;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+}
+
+.menu a {
+    color: #fafafa;
+    font-size: 12px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #d8bd86;
+}
+
+.btn-reserva {
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: #183d32;
+    color: #fffaf0;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.btn-reserva:hover,
+.btn-verde:hover {
+    background: #38634d;
+}
+
+/* ===== INTRODUCCIÓN ===== */
+.intro-experiencias {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 55px 25px 40px;
+    text-align: center;
+}
+
+.linea-decorativa {
+    display: block;
+    width: 55px;
+    height: 2px;
+    margin: 0 auto 17px;
+    background: #b79a60;
+}
+
+.intro-experiencias h2 {
+    margin-bottom: 14px;
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 4vw, 36px);
+    font-weight: normal;
+    color: #244638;
+}
+
+.intro-experiencias p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #596858;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ===== FICHAS: TRES BLOQUES ALTERNADOS ===== */
+.experiencias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 7% 60px;
+}
+
+.experiencia-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #deded8;
+    border-radius: 16px;
+    box-shadow: 0 9px 25px rgba(35, 55, 40, 0.13);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.experiencia-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(35, 55, 40, 0.18);
+}
+
+/* En la segunda ficha, la imagen pasa al lado derecho */
+.experiencia-invertida .experiencia-foto {
+    order: 2;
+}
+
+.experiencia-invertida .experiencia-contenido {
+    order: 1;
+}
+
+/* ===== IMÁGENES ===== */
+.experiencia-foto {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    background: #dce3d5;
+}
+
+.experiencia-foto img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.experiencia-card:hover .experiencia-foto img {
+    transform: scale(1.04);
+}
+
+.experiencia-numero {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background: #e4cf9e;
+    color: #234637;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+/* ===== CONTENIDO ===== */
+.experiencia-contenido {
+    padding: 34px clamp(24px, 4vw, 48px);
+    align-self: center;
+}
+
+.experiencia-categoria {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #987844;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.8px;
+    line-height: 1.6;
+}
+
+.experiencia-contenido h2 {
+    margin-bottom: 14px;
+    color: #244638;
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 2.7vw, 34px);
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.experiencia-resumen {
+    margin-bottom: 22px;
+    color: #59645a;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Actividades dentro de cada ficha */
+.actividad {
+    padding: 15px 0;
+    border-top: 1px solid #e1e1d7;
+}
+
+.actividad h3 {
+    margin-bottom: 6px;
+    color: #294c39;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+.actividad p {
+    color: #606a5e;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+/* ===== CIERRE ===== */
+.cierre-experiencias {
+    position: relative;
+    overflow: hidden;
+    margin: 0 7% 50px;
+    padding: 43px 25px;
+    border-radius: 15px;
+    background: linear-gradient(120deg, #1b4938, #315e46);
+    color: #f8f2e5;
+    text-align: center;
+}
+
+.cierre-hoja {
+    position: absolute;
+    right: -15px;
+    bottom: -55px;
+    color: rgba(222, 198, 146, 0.13);
+    font-family: Georgia, serif;
+    font-size: 150px;
+    transform: rotate(-30deg);
+    pointer-events: none;
+}
+
+.cierre-etiqueta {
+    margin-bottom: 12px;
+    color: #d8bd86;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.cierre-experiencias h2 {
+    margin-bottom: 13px;
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 4vw, 32px);
+    font-weight: normal;
+}
+
+.cierre-experiencias > p:not(.cierre-etiqueta) {
+    max-width: 570px;
+    margin: 0 auto 23px;
+    color: #e0e5d8;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cierre-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-contorno,
+.btn-verde {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-contorno {
+    border: 1px solid #d8bd86;
+    color: #f8f2e5;
+}
+
+.btn-contorno:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-verde {
+    background: #214738;
+    color: #fffaf0;
+}
+
+.btn-verde:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.footer {
+    padding: 30px 15px;
+    background: #173b2e;
+    color: #e7e3d6;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 5px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.footer a:last-child {
+    display: inline-block;
+    margin-top: 8px;
+    color: #d7bd87;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 950px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 8px;
+    }
+
+    .experiencias-grid {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .experiencia-card {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .experiencia-contenido {
+        padding: 28px;
+    }
+
+    .experiencia-foto img {
+        min-height: 460px;
+    }
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 650px) {
+    .navbar {
+        padding: 12px 5%;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 13px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .btn-reserva {
+        padding: 10px 14px;
+    }
+
+    .intro-experiencias {
+        padding: 38px 7% 30px;
+    }
+
+    .experiencias-grid {
+        gap: 23px;
+        padding: 0 5% 38px;
+    }
+
+    .experiencia-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* En móvil, todas las imágenes quedan arriba */
+    .experiencia-invertida .experiencia-foto,
+    .experiencia-invertida .experiencia-contenido {
+        order: initial;
+    }
+
+    .experiencia-foto {
+        height: 230px;
+        min-height: 0;
+    }
+
+    .experiencia-foto img {
+        height: 230px;
+        min-height: 0;
+    }
+
+    .experiencia-contenido {
+        padding: 24px;
+    }
+
+    .experiencia-contenido h2 {
+        font-size: 27px;
+    }
+
+    .cierre-experiencias {
+        margin: 0 5% 35px;
+        padding: 33px 20px;
+    }
+
+    .cierre-botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ===== ENCABEZADO COMPACTO EN CELULARES ===== */
+@media (max-width: 600px) {
+    .navbar {
+        min-height: 70px;
+        padding: 10px 18px;
+        justify-content: flex-start;
+    }
+
+    /* Ocultar los enlaces de navegación */
+    .navbar .menu {
+        display: none;
+    }
+
+    /* Ocultar el botón de reserva */
+    .navbar .btn-reserva {
+        display: none;
+    }
+
+    /* Mantener visible el logo y el nombre */
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .navbar .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+}

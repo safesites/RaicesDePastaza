@@ -1,0 +1,617 @@
+/* ===== ESTILOS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #233e32;
+    background: #f1f1ed;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+.navbar {
+    min-height: 76px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: white;
+    background-color: #234b35;
+    border-bottom: 1px solid #d8d8c9;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.05;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: var(--navy, #183d32);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 950;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+    color: white;
+}
+
+.menu a {
+    font-size: 12px;
+    color: #fafafa;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ae8950;
+}
+
+.btn-reserva {
+    padding: 12px 20px;
+    border-radius: 30px;
+    background-color: #214738;
+    color: #fffaf0;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.btn-reserva:hover,
+.btn-verde:hover {
+    background-color: #38634d;
+}
+
+/* ===== BOTONES ===== */
+.btn-dorado,
+.btn-verde {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 21px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-dorado {
+    background-color: #c3a064;
+    color: white;
+}
+
+.btn-dorado:hover {
+    background-color: #a9864d;
+    transform: translateY(-2px);
+}
+
+.btn-verde {
+    background-color: #214738;
+    color: #fffaf0;
+}
+
+.btn-verde:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== PORTADA DE COMUNIDADES ===== */
+.encabezado-comunidades {
+    min-height: 370px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 55px 9%;
+    background: linear-gradient(
+        110deg,
+        rgba(20, 61, 46, 0.97),
+        rgba(36, 82, 61, 0.91) 58%,
+        rgba(61, 101, 73, 0.85)
+    );
+    color: #f8f2e5;
+}
+
+.encabezado-comunidades::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(221, 194, 137, 0.16),
+            transparent 30%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 35px,
+            rgba(255, 255, 255, 0.018) 36px,
+            transparent 37px
+        );
+    pointer-events: none;
+}
+
+.encabezado-texto {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+}
+
+.etiqueta {
+    color: #d8bd86;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.encabezado-texto h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: #e7d9b8;
+}
+
+.introduccion {
+    max-width: 430px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #e5e9dc;
+    margin-bottom: 22px;
+}
+
+/* Adornos de la portada */
+.encabezado-decoracion {
+    position: absolute;
+    right: 8%;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    color: #d8bd86;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.hoja {
+    position: absolute;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.hoja-1 {
+    right: 20px;
+    top: 20px;
+    font-size: 190px;
+    transform: rotate(-25deg);
+}
+
+.hoja-2 {
+    right: 125px;
+    top: 125px;
+    font-size: 125px;
+    transform: rotate(35deg);
+    opacity: 0.6;
+}
+
+.hoja-3 {
+    right: -35px;
+    bottom: -45px;
+    font-size: 180px;
+    transform: rotate(65deg);
+    opacity: 0.45;
+}
+
+/* Sello decorativo */
+.encabezado-sello {
+    position: absolute;
+    right: 8%;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 22px;
+    border: 1px solid rgba(221, 194, 137, 0.6);
+    border-radius: 50%;
+    color: #e4d2a9;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    transform: rotate(-8deg);
+}
+
+.encabezado-sello span:first-child {
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+/* ===== PRESENTACIÓN ===== */
+.presentacion-fichas {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 25px 35px;
+    text-align: center;
+}
+
+.linea-decorativa {
+    display: block;
+    width: 55px;
+    height: 2px;
+    margin: 0 auto 17px;
+    background-color: #b79a60;
+}
+
+.presentacion-fichas h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.presentacion-fichas p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #596858;
+}
+
+/* ===== TARJETAS DE COMUNIDADES ===== */
+.fichas-comunidades {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 23px;
+    padding: 0 6% 55px;
+}
+
+.comunidad-ficha {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #deded8;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(28, 58, 42, 0.13);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comunidad-ficha:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 28px rgba(28, 58, 42, 0.18);
+}
+
+/* Imágenes de las fichas */
+.ficha-foto {
+    height: 205px;
+    flex: 0 0 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ficha-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.comunidad-ficha:hover .ficha-foto img {
+    transform: scale(1.05);
+}
+
+.ficha-numero {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #e4cf9e;
+    color: #234637;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+/* Texto de las fichas */
+.ficha-contenido {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 23px;
+}
+
+.ficha-lugar {
+    color: #987844;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    margin-bottom: 9px;
+}
+
+.ficha-contenido h2 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: normal;
+    color: #244638;
+    margin-bottom: 15px;
+}
+
+.ficha-descripcion {
+    font-size: 12px;
+    line-height: 1.85;
+    color: #59645a;
+    margin-bottom: 13px;
+}
+
+.ficha-separador {
+    height: 1px;
+    flex-shrink: 0;
+    background-color: #d9d9cb;
+    margin: 21px 0;
+}
+
+/* Temas culturales */
+.tema-cultural {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
+    margin-bottom: 19px;
+}
+
+.tema-cultural:last-child {
+    margin-bottom: 0;
+}
+
+.tema-icono {
+    color: #a88a50;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.tema-cultural h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #294c39;
+    margin-bottom: 6px;
+}
+
+.tema-cultural p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #606a5e;
+}
+
+/* ===== CIERRE DECORATIVO ===== */
+.cierre-comunidades {
+    position: relative;
+    overflow: hidden;
+    margin: 0 6% 50px;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #1b4938, #315e46);
+    color: #f8f2e5;
+}
+
+.cierre-comunidades h2 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.cierre-comunidades p {
+    max-width: 550px;
+    margin: 0 auto 20px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #e0e5d8;
+}
+
+.cierre-adorno {
+    position: absolute;
+    right: -15px;
+    bottom: -55px;
+    font-family: Georgia, serif;
+    font-size: 150px;
+    color: rgba(222, 198, 146, 0.13);
+    transform: rotate(-30deg);
+    pointer-events: none;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.footer {
+    padding: 30px 15px;
+    text-align: center;
+    background-color: #173b2e;
+    color: #e7e3d6;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.footer-logo {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.footer a:last-child {
+    display: inline-block;
+    margin-top: 8px;
+    color: #d7bd87;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 8px;
+    }
+
+    .fichas-comunidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .encabezado-decoracion {
+        right: 0;
+        opacity: 0.35;
+    }
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 5%;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 13px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .encabezado-comunidades {
+        min-height: 400px;
+        padding: 45px 7%;
+    }
+
+    .encabezado-texto h1 {
+        font-size: 53px;
+    }
+
+    .introduccion {
+        max-width: 330px;
+    }
+
+    .encabezado-decoracion {
+        right: -100px;
+        opacity: 0.2;
+    }
+
+    .encabezado-sello {
+        right: 6%;
+        bottom: 15px;
+        padding: 10px 15px;
+        font-size: 9px;
+    }
+
+    .presentacion-fichas {
+        padding: 35px 7% 25px;
+    }
+
+    .presentacion-fichas h2 {
+        font-size: 28px;
+    }
+
+    .fichas-comunidades {
+        grid-template-columns: 1fr;
+        padding: 0 5% 35px;
+        gap: 22px;
+    }
+
+    .ficha-foto {
+        height: 225px;
+        flex-basis: 225px;
+    }
+
+    .ficha-contenido {
+        padding: 22px;
+    }
+
+    .ficha-contenido h2 {
+        font-size: 27px;
+    }
+
+    .cierre-comunidades {
+        margin: 0 5% 35px;
+        padding: 32px 20px;
+    }
+
+    .cierre-comunidades h2 {
+        font-size: 25px;
+    }
+}
+
+/* ===== ENCABEZADO COMPACTO EN CELULARES ===== */
+@media (max-width: 600px) {
+    .navbar {
+        min-height: 70px;
+        padding: 10px 18px;
+        justify-content: flex-start;
+    }
+
+    /* Ocultar los enlaces de navegación */
+    .navbar .menu {
+        display: none;
+    }
+
+    /* Ocultar el botón de reserva */
+    .navbar .btn-reserva {
+        display: none;
+    }
+
+    /* Mantener visible el logo y el nombre */
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .navbar .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+}
